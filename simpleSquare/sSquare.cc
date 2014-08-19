@@ -9,14 +9,10 @@
 #include <LAPACK/zgeev.h>
 
 #define PI (3.141592653589793)
-#define IBITS(n,i) (((n) & 1 << i) >> i)
-#define IBSET(n,i) ((n) | (1<<i))
-#define IBCLR(n,i) ((n)^(IBITS(n,i) << i))
 
 using namespace std;
 using namespace dmtk;
 
-unsigned factorial(unsigned);
 void Diagonalize(int, Matrix<complex<double> >, Matrix<complex<double> > &, Vector<complex<double> > &);
 
 int main()
@@ -86,12 +82,3 @@ void Diagonalize(int dim, Matrix<complex<double> > mat, Matrix<complex<double> >
 		eval(i1) = vals(i1);}
 	//cout << " Diagonalization info " << info << " ************ " << endl;
 } //End Diagonalization
-
-// Factorial
-unsigned factorial(unsigned n)
-{
-    if (n == 0)
-        return 1;
-    else
-        return n * factorial(n - 1);
-}
