@@ -27,7 +27,7 @@ b=zeros(n_states-1,1);
 a=zeros(n_states-1,1);
 
 % % For second method
-move=2*l+1;     % this hops left and right
+% move=2*l+1;     % this hops left and right
 
 % Calculate newstate 1
 newstates(seed,1)=1;
